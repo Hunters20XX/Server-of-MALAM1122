@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float thisIsADecimal = 3.14f;
+   public float speed = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(thisIsADecimal);
-        thisIsADecimal++;
-        Debug.Log(thisIsADecimal);
+       
     }
 
     // Update is called once per frame
@@ -19,24 +17,24 @@ public class Player : MonoBehaviour
     {
         //transform.position = new Vector3(7, 0, 5);
 
-        Vector3 newPos = transform.position;
+        Vector3 currentPos = transform.position;
 
-        if (Input.GetKey (KeyCode.D))
+        if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow))
         {
-            newPos.x+= 0.1f;
+            currentPos.x = currentPos.x + speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            newPos.x-= 0.1f;
+            currentPos.x = currentPos.x - speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            newPos.z+= 0.1f;
+            currentPos.z = currentPos.z + speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            newPos.z-= 0.1f;
+            currentPos.z = currentPos.z - speed * Time.deltaTime;
         }
-        transform.position = newPos;
+        transform.position = currentPos;
     }
 }
