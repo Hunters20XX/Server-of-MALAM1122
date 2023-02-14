@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-   public float speed = 10f;
+    public float speed = 10f;
+    int health = 10;
+    public TMP_Text healthText;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        healthText.text = "Health: " + health.ToString();
     }
 
     // Update is called once per frame
@@ -36,5 +39,15 @@ public class Player : MonoBehaviour
             currentPos.z = currentPos.z - speed * Time.deltaTime;
         }
         transform.position = currentPos;
+    }
+
+    void OnCollisionEnter(Collision otherThing)
+    {
+        Debug.Log(otherThing.gameObject.name);
+        if (otherThing.gameObject.name == "Enemy")
+        {
+            health--;
+            healthText.text = "Health: " + health.ToString();
+        }
     }
 }
