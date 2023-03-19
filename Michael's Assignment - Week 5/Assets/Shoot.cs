@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootA : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public float timeRemaining = 5;
