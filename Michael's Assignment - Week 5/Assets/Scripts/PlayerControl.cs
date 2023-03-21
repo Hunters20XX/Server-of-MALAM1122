@@ -24,7 +24,7 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sphereText.text = "Sphere: " + sphere.ToString() + " / 40";
+        sphereText.text = "Sphere: " + sphere.ToString() + " / 90";
         healthText.text = "Health: " + health.ToString();
         winText.SetActive(false);
         endText.SetActive(false);
@@ -51,39 +51,28 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sphere == 40)
+        if (sphere == 90)
         {
             winText.SetActive(true);
             Time.timeScale = 0;
         }
     }
 
-    void OnCollisionEnter(Collision otherThing)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(otherThing.gameObject.name);
-        if (otherThing.gameObject.tag == "PickUp")
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.tag == "PickUp")
         {
             sphere++;
-            sphereText.text = "Sphere: " + sphere.ToString() + " / 40";
-            Destroy(otherThing.gameObject);
+            sphereText.text = "Sphere: " + sphere.ToString() + " / 90";
+            Destroy(other.gameObject);
         }
 
-        if (otherThing.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Bullet")
         {
             health--;
             healthText.text = "Health: " + health.ToString();
-            if (health <= 0)
-            {
-                endText.SetActive(true);
-                Time.timeScale = 0;
-            }
-        }
-
-        if (otherThing.gameObject.tag == "Bullet")
-        {
-            health--;
-            healthText.text = "Health: " + health.ToString();
-            Destroy(otherThing.gameObject);
+            other.gameObject.SetActive(false);
             if (health <= 0)
             {
                 endText.SetActive(true);
