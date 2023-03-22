@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ItemInfo : MonoBehaviour
+public class Door : MonoBehaviour
 {
     public string itemName;
     PlayerControl playerScript;
@@ -16,9 +16,9 @@ public class ItemInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
-    
+
     void OnMouseOver()
     {
         Debug.Log(itemName);
@@ -32,7 +32,9 @@ public class ItemInfo : MonoBehaviour
 
     void OnMouseDown()
     {
-        gameObject.SetActive(false);
-        GameObject.Find("Player").GetComponent<Mission>().keys += 1;
-    } 
+        if (playerScript.hasAllKeys == true)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
