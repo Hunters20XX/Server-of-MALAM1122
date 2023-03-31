@@ -5,6 +5,9 @@ using TMPro;
 
 public class ItemInfo : MonoBehaviour
 {
+    public AudioSource playeraudio;
+    public AudioClip key;
+
     public string itemName;
     //Publicly display the string with itemName.
     PlayerControl playerScript;
@@ -41,5 +44,13 @@ public class ItemInfo : MonoBehaviour
         gameObject.SetActive(false);
         GameObject.Find("Player").GetComponent<Mission>().keys += 1;
         //If an item is clicked on, it disappears and goes to the script "Mission" to add a key by 1.
+
+
     } 
+
+    void OnDisable()
+    {
+            playeraudio = GameObject.Find("Player").GetComponent<AudioSource>();
+            playeraudio.PlayOneShot(key);
+    }
 }

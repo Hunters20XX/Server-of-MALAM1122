@@ -83,7 +83,7 @@ public class PlayerControl : MonoBehaviour
             currentBullet.transform.position = transform.position;
             //Have the bullet move forward based on the camera and the player's direction.
 
-            currentBullet.GetComponent<Rigidbody>().velocity = 5 * transform.forward;
+            currentBullet.GetComponent<Rigidbody>().velocity = 5 * playerCam.forward;
             //Have the bullet move forward with the Rigidbody and the velocity based on transform.forward and a number.
 
             bulletIndex++;
@@ -124,6 +124,8 @@ public class PlayerControl : MonoBehaviour
 
         characterControl.Move(vel * Time.deltaTime);
         //Have the player move around with velocity and Time.deltaTime.
+
+        
     }
 
     void CreateBulletPool()

@@ -32,7 +32,7 @@ public class Mission : MonoBehaviour
         }
         //If the player finds all the keys from each enemy, then the bool from the component, in turn the script "PlayerControl," hasAllKey is labeled as true.
 
-        if (transform.position.z > threshold)
+        if (transform.position.z > threshold && GameObject.Find("Player").GetComponent<PlayerControl>().hasAllKeys == true)
         {
             winText.gameObject.SetActive(true);
             Time.timeScale = 0;

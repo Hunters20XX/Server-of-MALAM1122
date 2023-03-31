@@ -8,9 +8,17 @@ public class Enemy : MonoBehaviour
     //The public int for the enemy's health is 5, needed to live.
     public GameObject block;
     //The block in the GameObject is needed in the enemy's keep.
+
+    public AudioSource playeraudio;
+    public AudioClip boop;
+    public AudioClip dead;
+
+    public float x;
+    public float y;
+    public float z;
+
     void Start()
     {
-        block.gameObject.SetActive(false);
         //Have the block be invisible in the enemy's keep.
     }
 
@@ -32,13 +40,17 @@ public class Enemy : MonoBehaviour
         {
             health--;
             otherThing.gameObject.SetActive(false);
+            playeraudio.PlayOneShot(boop);
         }
         //If the enemy takes a hit from an object tagged as "Bullet", then it loses a health by 1, and that bullet disappears.
     }
 
     void OnDisable()
     {
-        block.gameObject.SetActive(true);
+        block.transform.position = new Vector3 (x, y, z - 1.5f);
+
+        playeraudio = GameObject.Find("Player").GetComponent<AudioSource>();
+        playeraudio.PlayOneShot(dead);
     }
     //When dead, the block object appears afterward.
 }

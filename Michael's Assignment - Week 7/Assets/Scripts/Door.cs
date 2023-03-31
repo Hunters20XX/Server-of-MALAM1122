@@ -5,6 +5,9 @@ using TMPro;
 
 public class Door : MonoBehaviour
 {
+    public AudioSource playeraudio;
+    public AudioClip door;
+
     public string itemName;
     //Publicly display the string with itemName.
     PlayerControl playerScript;
@@ -40,7 +43,14 @@ public class Door : MonoBehaviour
         if (playerScript.hasAllKeys == true)
         {
             gameObject.SetActive(false);
+            playeraudio = GameObject.Find("Player").GetComponent<AudioSource>();
+            playeraudio.PlayOneShot(door);
         }
         //If the player has all the keys, thus labeling the bool "hasAllKeys" as true, and that the door is clicked on because of it, then that door opens and disappear, clearing the game in the progress.
+    }
+
+    void OnDisable()
+    {
+        
     }
 }
