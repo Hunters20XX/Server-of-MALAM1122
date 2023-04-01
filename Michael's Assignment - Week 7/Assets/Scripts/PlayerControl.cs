@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
 
         CreateBulletPool();
         //Made a void for CreateBulletPool().
+
     }
     //Do the following task in the void Start().
 
@@ -69,9 +70,31 @@ public class PlayerControl : MonoBehaviour
 
     public AudioSource playeraudio;
     public AudioClip shoot;
+    public Rigidbody rb;
+    public float buttonTime = 0.3f;
+    public float jumpAmount = 3;
+    float jumpTime;
+    bool jumping;
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumping = true;
+            jumpTime = 0;
+        }
+
+        if (jumping)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpAmount);
+            jumpTime += Time.deltaTime;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime)
+        {
+            jumping = false;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             GameObject currentBullet = bulletPool[bulletIndex];
@@ -122,10 +145,9 @@ public class PlayerControl : MonoBehaviour
         vel = transform.TransformDirection(vel);
         //Move while you're facing direction.
 
-        characterControl.Move(vel * Time.deltaTime);
-        //Have the player move around with velocity and Time.deltaTime.
 
-        
+        characterControl.Move (vel * Time.deltaTime);
+        //Have the player move around with velocity and Time.deltaTime.        
     }
 
     void CreateBulletPool()
@@ -143,4 +165,6 @@ public class PlayerControl : MonoBehaviour
         }
         //Do the following task for the array list inside void CreateBulletPool().
     }
+
+    
 }
