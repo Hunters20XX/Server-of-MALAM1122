@@ -70,29 +70,23 @@ public class PlayerControl : MonoBehaviour
 
     public AudioSource playeraudio;
     public AudioClip shoot;
-    public Rigidbody rb;
-    public float buttonTime = 0.3f;
-    public float jumpAmount = 3;
-    float jumpTime;
-    bool jumping;
+
+    public bool rise = false;
+    public bool fall = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
-            jumping = true;
-            jumpTime = 0;
+            vel.y = speed;
         }
-
-        if (jumping)
+        if (Input.GetAxis("Mouse ScrollWheel") == 0f) // forward
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpAmount);
-            jumpTime += Time.deltaTime;
+            vel.y = 0;
         }
-
-        if (Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
-            jumping = false;
+            vel.y = -speed;
         }
 
         if (Input.GetMouseButtonDown(0))
