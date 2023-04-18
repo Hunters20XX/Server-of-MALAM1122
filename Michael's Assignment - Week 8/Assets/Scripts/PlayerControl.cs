@@ -76,23 +76,29 @@ public class PlayerControl : MonoBehaviour
     public float gravityScale = 1;
     public float jumpHeight = 4;
     float velocity;
+    public int jumpCount = 0;
 
     void MovePlayer()
     {
         cc.Move(new Vector3(0, velocity, 0) * Time.deltaTime);
     }
 
-    
-
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && cc.isGrounded)
+
+        MovePlayer();
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount == 0)
         {
             velocity = Mathf.Sqrt(jumpHeight * -3f * (gravity * gravityScale));
             // Jump !!
+            jumpCount = 1;
+        }
+
+        if (cc.isGrounded)
+        {
+            jumpCount = 0;
         }
         velocity += gravity * gravityScale * Time.deltaTime;
-        MovePlayer();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -163,6 +169,4 @@ public class PlayerControl : MonoBehaviour
         }
         //Do the following task for the array list inside void CreateBulletPool().
     }
-
-    
 }
