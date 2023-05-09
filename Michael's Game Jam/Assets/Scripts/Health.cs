@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public TMP_Text healthText;
     public GameObject endText;
     public bool protection = false;
+    public float Shield = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,22 @@ public class Health : MonoBehaviour
             endText.SetActive(true);
             Time.timeScale = 0;
         }
+
+        if (heart >= 9)
+        {
+            heart = 9;
+        }
+
+        if (protection == true)
+        {
+            Shield -= Time.deltaTime;
+            if (Shield < 0)
+            {
+                protection = false;
+                Shield = 3;
+            }
+        }
+
         healthText.text = "Health: " + heart.ToString();
     }
 
@@ -39,11 +56,26 @@ public class Health : MonoBehaviour
         {
             transform.position = new Vector3(0, 5, 0);
             heart -= 1;
+            protection = true;
         }
-        if (transform.position.x < -14 || transform.position.x > 14)
+        if (transform.position.x < -14 && protection == false || transform.position.x > 14 && protection == false)
         {
             transform.position = new Vector3(0, 5, 0);
             heart -= 1;
+            protection = true;
+        }
+
+        if (transform.position.y < -15 && protection == true)
+        {
+            transform.position = new Vector3(0, 5, 0);
+        }
+        if (transform.position.z < -14 && protection == true || transform.position.z > 14 && protection == true)
+        {
+            transform.position = new Vector3(0, 5, 0);
+        }
+        if (transform.position.x < -14 && protection == true || transform.position.x > 14 && protection == true)
+        {
+            transform.position = new Vector3(0, 5, 0);
         }
         healthText.text = "Health: " + heart.ToString();
     }

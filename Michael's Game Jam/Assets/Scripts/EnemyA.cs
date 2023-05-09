@@ -18,11 +18,11 @@ public class EnemyA : MonoBehaviour
     void Update()
     {
         Change = GetComponent<ConstantForce>();
-        if (transform.position.x >= 10)
+        if (transform.position.x >= 9)
         {
             enemy.GetComponent<ConstantForce>().force = new Vector3(numberB, 0, 0);
         }
-        if (transform.position.x <= -10)
+        if (transform.position.x <= -9)
         {
             enemy.GetComponent<ConstantForce>().force = new Vector3(numberA, 0, 0);
         }

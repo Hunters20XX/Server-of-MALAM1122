@@ -9,6 +9,6 @@ public class MainMenu : MonoBehaviour
 
     public void LevelA()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage");
     }
 }

@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         vel.x = Input.GetAxis("Horizontal") * speed;
         vel = transform.TransformDirection(vel);
 
-        if (Input.GetKey(KeyCode.Space) && cc.isGrounded)
+        if (Input.GetKey(KeyCode.Z) && cc.isGrounded)
         {
             velocity = Mathf.Sqrt(jumpHeight * -3f * (gravity * gravityScale));
             // Jump !!
