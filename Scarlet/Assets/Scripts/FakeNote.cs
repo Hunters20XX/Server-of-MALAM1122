@@ -12,12 +12,16 @@ public class FakeNote : MonoBehaviour
 
     FrenzyMode frenzy;
     Gameplay game;
+    ButtonController bc;
+
+    public AudioSource poof;
 
     // Start is called before the first frame update
     void Start()
     {
         frenzy = GameObject.Find("vampire_neutral").GetComponent<FrenzyMode>();
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+        bc = GameObject.Find("vampire_neutral").GetComponent<ButtonController>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,8 @@ public class FakeNote : MonoBehaviour
                 fail = true;
                 GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
                 frenzy.hitsInARow = 0;
+                bc.hurt = true;
+                poof.Play();
             }
         }
 
@@ -46,6 +52,8 @@ public class FakeNote : MonoBehaviour
                 fail = true;
                 GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 2;
                 frenzy.hitsInARow = 0;
+                bc.hurt = true;
+                poof.Play();
             }
         }
     }

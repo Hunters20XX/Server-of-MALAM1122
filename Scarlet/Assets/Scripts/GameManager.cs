@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 
     public BeatScroller theBS;
 
-    bool pausedMusic = false;
+    public bool timer = false;
+    public float time;
 
     Gameplay game;
 
@@ -18,12 +19,34 @@ public class GameManager : MonoBehaviour
     {
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
 
-        theMusic.Play();
+        timer = true;
+
+
+        //StartCoroutine(MusicCoroutine());
     }
+
+    /*IEnumerator MusicCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        theMusic.Play();
+    }*/
 
     // Update is called once per frame
     void Update()
     {
+
+        if (timer)
+        {
+            time -= Time.deltaTime;
+        }
+
+        if (time <= 0)
+        {
+            theMusic.Play();
+            timer = false;
+            time = 1;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && game.end == false)
         {
             if (game.pause == true)
@@ -34,8 +57,13 @@ public class GameManager : MonoBehaviour
             if (game.pause == false)
             {
                 theMusic.Play();
+
             }
         }
 
+
+
     }
+
+
 }

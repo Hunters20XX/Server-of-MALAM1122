@@ -8,52 +8,54 @@ public class NoteObject : MonoBehaviour
 
     public KeyCode keyToPress;
     public KeyCode keyToPress2;
-    public float threshold;
+    private float threshold = -7f;
     public bool fail = false;
     public bool nice = false;
     public bool great = false;
     public bool perfect = false;
     FrenzyMode frenzy;
     Gameplay game;
+    ButtonController bc;
 
     // Start is called before the first frame update
     void Start()
     {
         frenzy = GameObject.Find("vampire_neutral").GetComponent<FrenzyMode>();
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+        bc = GameObject.Find("vampire_neutral").GetComponent<ButtonController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -2.4)
+        if (transform.position.x < -3.6)
         {
             {
                 nice = true;
             }
         }
-        if (transform.position.x < -2.7)
+        if (transform.position.x < -3.9)
         {
             {
                 great = true;
                 nice = false;
             }
         }
-        if (transform.position.x < -3.3)
+        if (transform.position.x < -4.2)
         {
             {
                 perfect = true;
                 great = false;
             }
         }
-        if (transform.position.x < -4.13)
+        if (transform.position.x < -4.5)
         {
             {
                 great = true;
                 perfect = false;
             }
         }
-        if (transform.position.x < -4.4)
+        if (transform.position.x < -4.8)
         {
             {
                 nice = true;
@@ -136,6 +138,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
             if (canBePressed && great == true)
             {
@@ -210,6 +213,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
             if (canBePressed && perfect == true)
             {
@@ -285,6 +289,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
         }
 
@@ -364,6 +369,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
             if (canBePressed && great == true)
             {
@@ -439,6 +445,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
             if (canBePressed && perfect == true)
             {
@@ -515,6 +522,7 @@ public class NoteObject : MonoBehaviour
                 gameObject.SetActive(false);
                 GameObject.Find("Button1").GetComponent<Score>().hit++;
                 GameObject.Find("vampire_neutral").GetComponent<Gameplay>().hits++;
+                bc.attack = true;
             }
         }
 

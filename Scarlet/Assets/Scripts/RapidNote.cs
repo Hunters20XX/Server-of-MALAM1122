@@ -20,6 +20,8 @@ public class RapidNote : MonoBehaviour
     private SpriteRenderer theSR;
     public Sprite pressedImage;
     Gameplay game;
+    ButtonController bc;
+    public AudioSource swing;
 
 
     // Start is called before the first frame update
@@ -28,9 +30,11 @@ public class RapidNote : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
         frenzy = GameObject.Find("vampire_neutral").GetComponent<FrenzyMode>();
         game = GameObject.Find("vampire_neutral").GetComponent<Gameplay>();
+        bc = GameObject.Find("vampire_neutral").GetComponent<ButtonController>();
         beatTempo = beatTempo / 60f;
         moving = true;
         timer = false;
+        
     }
 
     // Update is called once per frame
@@ -96,6 +100,8 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
                 }
 
+                bc.attack = true;
+
             }
         }
 
@@ -148,6 +154,8 @@ public class RapidNote : MonoBehaviour
                     GameObject.Find("Button1").GetComponent<Score>().victim += 6;
                     GameObject.Find("vampire_neutral").GetComponent<Gameplay>().score += 6;
                 }
+
+                bc.attack = true;
             }
         }
 
@@ -157,6 +165,8 @@ public class RapidNote : MonoBehaviour
             GameObject.Find("Button1").GetComponent<Score>().hit = 0;
             GameObject.Find("vampire_neutral").GetComponent<Health>().heart -= 3;
             frenzy.hitsInARow = 0;
+            bc.hurt = true;
+            swing.Play();
             dead = true;
         }
 
