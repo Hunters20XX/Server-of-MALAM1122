@@ -34,10 +34,12 @@ public class Health : MonoBehaviour
         if (protection == true)
         {
             Shield -= Time.deltaTime;
+            GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(218, 0, 255);
             if (Shield < 0)
             {
                 protection = false;
                 Shield = 3;
+                GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(255, 254, 0);
             }
         }
 
@@ -78,5 +80,16 @@ public class Health : MonoBehaviour
             transform.position = new Vector3(0, 5, 0);
         }
         healthText.text = "Health: " + heart.ToString();
+    }
+
+    void OnTriggerEnter(Collider otherThing)
+    {
+        if (otherThing.gameObject.tag == "Bullet" && protection == false)
+        {
+            heart--;
+            otherThing.gameObject.SetActive(false);
+            protection = true;
+        }
+        //If the enemy takes a hit from an object tagged as "Bullet", then it loses a health by 1, and that bullet disappears.
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -861,6 +861,10 @@ GameObject:
   - component: {fileID: 462300148}
   - component: {fileID: 462300150}
   - component: {fileID: 462300151}
+  - component: {fileID: 462300155}
+  - component: {fileID: 462300154}
+  - component: {fileID: 462300153}
+  - component: {fileID: 462300152}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1007,6 +1011,74 @@ MonoBehaviour:
   countDown: 5
   choiceA: -50
   choiceB: 0
+--- !u!114 &462300152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462300143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: -20
+--- !u!114 &462300153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462300143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: 20
+--- !u!114 &462300154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462300143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: -10
+--- !u!114 &462300155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462300143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: 10
 --- !u!1 &537633170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1095,10 @@ GameObject:
   - component: {fileID: 537633175}
   - component: {fileID: 537633177}
   - component: {fileID: 537633178}
+  - component: {fileID: 537633182}
+  - component: {fileID: 537633181}
+  - component: {fileID: 537633180}
+  - component: {fileID: 537633179}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1168,6 +1244,74 @@ MonoBehaviour:
   bulletNum: 10
   countDown: 5
   choiceA: 0
+  choiceB: 50
+--- !u!114 &537633179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537633170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 20
+  choiceB: 50
+--- !u!114 &537633180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537633170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -20
+  choiceB: 50
+--- !u!114 &537633181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537633170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 10
+  choiceB: 50
+--- !u!114 &537633182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537633170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -10
   choiceB: 50
 --- !u!1 &705507993
 GameObject:
@@ -1426,6 +1570,10 @@ GameObject:
   - component: {fileID: 941223000}
   - component: {fileID: 941223002}
   - component: {fileID: 941223003}
+  - component: {fileID: 941223005}
+  - component: {fileID: 941223004}
+  - component: {fileID: 941223007}
+  - component: {fileID: 941223006}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1571,6 +1719,74 @@ MonoBehaviour:
   bulletNum: 10
   countDown: 5
   choiceA: 0
+  choiceB: -50
+--- !u!114 &941223004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941222995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 10
+  choiceB: -50
+--- !u!114 &941223005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941222995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -10
+  choiceB: -50
+--- !u!114 &941223006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941222995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 20
+  choiceB: -50
+--- !u!114 &941223007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941222995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -20
   choiceB: -50
 --- !u!1 &963194225
 GameObject:
@@ -1973,6 +2189,10 @@ GameObject:
   - component: {fileID: 1104191521}
   - component: {fileID: 1104191523}
   - component: {fileID: 1104191524}
+  - component: {fileID: 1104191528}
+  - component: {fileID: 1104191527}
+  - component: {fileID: 1104191526}
+  - component: {fileID: 1104191525}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -2119,6 +2339,74 @@ MonoBehaviour:
   countDown: 5
   choiceA: 50
   choiceB: 0
+--- !u!114 &1104191525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104191516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: -20
+--- !u!114 &1104191526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104191516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: 20
+--- !u!114 &1104191527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104191516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: -10
+--- !u!114 &1104191528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104191516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: 10
 --- !u!1 &1235889461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2656,10 @@ GameObject:
   - component: {fileID: 1439989178}
   - component: {fileID: 1439989177}
   - component: {fileID: 1439989183}
+  - component: {fileID: 1439989187}
+  - component: {fileID: 1439989186}
+  - component: {fileID: 1439989185}
+  - component: {fileID: 1439989184}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -2514,6 +2806,74 @@ MonoBehaviour:
   countDown: 5
   choiceA: -50
   choiceB: 0
+--- !u!114 &1439989184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439989175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: -20
+--- !u!114 &1439989185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439989175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: 20
+--- !u!114 &1439989186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439989175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: -10
+--- !u!114 &1439989187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439989175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -50
+  choiceB: 10
 --- !u!1 &1590772553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,6 +2890,10 @@ GameObject:
   - component: {fileID: 1590772556}
   - component: {fileID: 1590772555}
   - component: {fileID: 1590772561}
+  - component: {fileID: 1590772565}
+  - component: {fileID: 1590772564}
+  - component: {fileID: 1590772563}
+  - component: {fileID: 1590772562}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -2676,6 +3040,74 @@ MonoBehaviour:
   countDown: 5
   choiceA: 0
   choiceB: -50
+--- !u!114 &1590772562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590772553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 20
+  choiceB: -50
+--- !u!114 &1590772563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590772553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -20
+  choiceB: -50
+--- !u!114 &1590772564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590772553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 10
+  choiceB: -50
+--- !u!114 &1590772565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590772553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -10
+  choiceB: -50
 --- !u!1 &1620169490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,6 +3124,10 @@ GameObject:
   - component: {fileID: 1620169493}
   - component: {fileID: 1620169492}
   - component: {fileID: 1620169498}
+  - component: {fileID: 1620169502}
+  - component: {fileID: 1620169501}
+  - component: {fileID: 1620169500}
+  - component: {fileID: 1620169499}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -2838,6 +3274,74 @@ MonoBehaviour:
   countDown: 5
   choiceA: 50
   choiceB: 0
+--- !u!114 &1620169499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620169490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: -20
+--- !u!114 &1620169500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620169490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: 20
+--- !u!114 &1620169501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620169490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: -10
+--- !u!114 &1620169502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620169490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 50
+  choiceB: 10
 --- !u!1 &1692840926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,6 +3463,10 @@ GameObject:
   - component: {fileID: 1715513451}
   - component: {fileID: 1715513450}
   - component: {fileID: 1715513456}
+  - component: {fileID: 1715513460}
+  - component: {fileID: 1715513459}
+  - component: {fileID: 1715513458}
+  - component: {fileID: 1715513457}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -3104,6 +3612,74 @@ MonoBehaviour:
   bulletNum: 10
   countDown: 5
   choiceA: 0
+  choiceB: 50
+--- !u!114 &1715513457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715513448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 20
+  choiceB: 50
+--- !u!114 &1715513458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715513448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1a226ec169fa64e906593a2daf7cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -20
+  choiceB: 50
+--- !u!114 &1715513459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715513448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: 10
+  choiceB: 50
+--- !u!114 &1715513460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715513448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274f0b410d55d9b4fb27364e3622ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6751743669007776630, guid: b2520896ebc29ec4db9adbfb008014e8, type: 3}
+  bulletNum: 10
+  countDown: 5
+  choiceA: -10
   choiceB: 50
 --- !u!1 &1791271744
 GameObject:

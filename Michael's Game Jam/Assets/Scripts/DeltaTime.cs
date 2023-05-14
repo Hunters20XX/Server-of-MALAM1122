@@ -26,7 +26,7 @@ public class DeltaTime : MonoBehaviour
         DisplayTime(timeRemaining);
         levelText.text = "Level: " + levelCount.ToString();
 
-        if (timeRemaining >= 86400)
+        if (timeRemaining >= 43200)
         {
             impossibleText.SetActive(true);
             timeRemaining = 0;
