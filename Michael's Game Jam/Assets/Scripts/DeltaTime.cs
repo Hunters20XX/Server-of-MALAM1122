@@ -9,8 +9,11 @@ public class DeltaTime : MonoBehaviour
     public TMP_Text timeText;
     public TMP_Text levelText;
     public GameObject impossibleText;
-    public int levelCount = 1;
+    public int levelCount = 0;
+    public int levelRow = 0;
 
+    public AudioSource playeraudio;
+    public AudioClip pop;
 
     void Start()
     {
@@ -39,11 +42,17 @@ public class DeltaTime : MonoBehaviour
             CancelInvoke("LevelUp");
         }
 
+        if (levelRow >= 10)
+        {
+            levelRow = 0;
+            playeraudio.PlayOneShot(pop);
+        }
     }
 
     void LevelUp()
     {
         levelCount += 1;
+        levelRow += 1;
     }
 
     void DisplayTime(float timeToDisplay)

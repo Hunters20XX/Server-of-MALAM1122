@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     public float gravityScale = 1;
     public float jumpHeight = 4;
     float velocity;
+
+    public AudioSource playeraudio;
+    public AudioClip jump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,8 @@ public class Player : MonoBehaviour
         {
             velocity = Mathf.Sqrt(jumpHeight * -3f * (gravity * gravityScale));
             // Jump !!
+
+            playeraudio.PlayOneShot(jump);
         }
 
         velocity += gravity * gravityScale * Time.deltaTime;
