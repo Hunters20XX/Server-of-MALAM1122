@@ -19,12 +19,19 @@ public class Player : MonoBehaviour
 
     public AudioSource playeraudio;
     public AudioClip jump;
+    public AudioClip timeout;
+    public AudioClip resume;
+
+    public GameObject pauseText;
+
+    public bool pause = false;
 
     // Start is called before the first frame update
     void Start()
     {
         characterControl = GetComponent<CharacterController>();
         Time.timeScale = 1.0f;
+        pauseText.SetActive(false);
     }
 
     void MovePlayer()
@@ -46,6 +53,32 @@ public class Player : MonoBehaviour
             // Jump !!
 
             playeraudio.PlayOneShot(jump);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && GetComponent<DeltaTime>().finished == false)
+        {
+            pause = !pause;
+            //more code here
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && pause == false && GetComponent<DeltaTime>().finished == false)
+        {
+            playeraudio.PlayOneShot(resume);
+            //more code here
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && pause == true && GetComponent<DeltaTime>().finished == false)
+        {
+            playeraudio.PlayOneShot(timeout);
+            //more code here
+        }
+        if (pause == true && GetComponent<DeltaTime>().finished == false)
+        {
+            Time.timeScale = 0;
+            pauseText.SetActive(true);
+        }
+        else if (pause == false && GetComponent<DeltaTime>().finished == false)
+        {
+            Time.timeScale = 1;
+            pauseText.SetActive(false);
         }
 
         velocity += gravity * gravityScale * Time.deltaTime;

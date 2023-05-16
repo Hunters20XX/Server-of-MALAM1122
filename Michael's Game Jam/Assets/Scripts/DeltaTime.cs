@@ -14,6 +14,10 @@ public class DeltaTime : MonoBehaviour
 
     public AudioSource playeraudio;
     public AudioClip pop;
+    public AudioClip max;
+    public AudioClip end;
+
+    public bool finished = false;
 
     void Start()
     {
@@ -34,6 +38,8 @@ public class DeltaTime : MonoBehaviour
             impossibleText.SetActive(true);
             timeRemaining = 0;
             Time.timeScale = 0;
+            playeraudio.PlayOneShot(end);
+            finished = true;
         }
 
         if (levelCount > 199)
@@ -42,10 +48,15 @@ public class DeltaTime : MonoBehaviour
             CancelInvoke("LevelUp");
         }
 
-        if (levelRow >= 10)
+        if (levelRow >= 10 && levelCount < 199)
         {
             levelRow = 0;
             playeraudio.PlayOneShot(pop);
+        }
+        if (levelRow >= 10 && levelCount > 199)
+        {
+            levelRow = 0;
+            playeraudio.PlayOneShot(max);
         }
     }
 

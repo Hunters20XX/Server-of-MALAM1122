@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
     {
         if (heart <= 0)
         {
+            GameObject.Find("Player").GetComponent<DeltaTime>().finished = true;
             Player.SetActive(false);
             endText.SetActive(true);
             Time.timeScale = 0;

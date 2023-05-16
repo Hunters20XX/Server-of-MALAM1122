@@ -15,6 +15,9 @@ public class ExtraLife : MonoBehaviour
     public float zoneX;
     public float zoneZ;
 
+    public AudioSource playeraudio;
+    public AudioClip sprout;
+
     DeltaTime clock;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class ExtraLife : MonoBehaviour
         zoneZ = Random.Range(-8.5f, 8.5f);
         if (countDown <= 0)
         {
+            playeraudio.PlayOneShot(sprout);
+
             GameObject currentHeart = heartPool[heartIndex];
             //Use the GameObject currentBullet as the base for the bulletPool [and bulletIndex].
 

@@ -9,6 +9,13 @@ public class Music : MonoBehaviour
     public AudioSource audioSourceLoop;
     private bool startedLoop;
 
+    DeltaTime clock;
+
+    void Start()
+    {
+        clock = GameObject.Find("Player").GetComponent<DeltaTime>();
+    }
+
     void FixedUpdate()
     {
         if (!audioSourceIntro.isPlaying && !startedLoop)
@@ -17,5 +24,18 @@ public class Music : MonoBehaviour
             Debug.Log("Done playing");
             startedLoop = true;
         }
+
     }
+
+    void Update()
+    {
+
+        if (clock.finished == true)
+        {
+            audioSourceIntro.Stop();
+            audioSourceLoop.Stop();
+            startedLoop = false;
+        }
+    }
+
 }
