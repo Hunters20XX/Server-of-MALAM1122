@@ -71,9 +71,9 @@ public class Health : MonoBehaviour
         {
             transform.position = new Vector3(0, 5, 0);
             heart -= 1;
-            protection = true;
             if (heart > 0)
             {
+                protection = true;
                 playeraudio.PlayOneShot(ouch);
             }
         }
@@ -81,9 +81,9 @@ public class Health : MonoBehaviour
         {
             transform.position = new Vector3(0, 5, 0);
             heart -= 1;
-            protection = true;
             if (heart > 0)
             {
+                protection = true;
                 playeraudio.PlayOneShot(ouch);
             }
         }
@@ -91,9 +91,9 @@ public class Health : MonoBehaviour
         {
             transform.position = new Vector3(0, 5, 0);
             heart -= 1;
-            protection = true;
             if (heart > 0)
             {
+                protection = true;
                 playeraudio.PlayOneShot(ouch);
             }
         }
