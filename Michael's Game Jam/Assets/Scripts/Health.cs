@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
         if (heart <= 0)
         {
             GameObject.Find("Player").GetComponent<DeltaTime>().finished = true;
+            playeraudio.PlayOneShot(dead);
             Player.SetActive(false);
             endText.SetActive(true);
             Time.timeScale = 0;
@@ -147,11 +148,12 @@ public class Health : MonoBehaviour
             if (protection == false)
             {
                 protection = true;
-            } else if (protection == true)
+            }
+            else if (protection == true)
             {
                 Shield = 4;
             }
-            
+
         }
     }
 
@@ -159,10 +161,5 @@ public class Health : MonoBehaviour
     {
         float seconds = Mathf.FloorToInt(timeToDisplay);
         shieldText.text = "Shield: " + string.Format("{0}", seconds);
-    }
-
-    void OnDisable()
-    {
-        playeraudio.PlayOneShot(dead);
     }
 }
