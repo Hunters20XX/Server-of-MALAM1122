@@ -119,10 +119,10 @@ public class Health : MonoBehaviour
         {
             heart--;
             otherThing.gameObject.SetActive(false);
-            protection = true;
             playeraudio.PlayOneShot(hit);
             if (heart > 0)
             {
+                protection = true;
                 playeraudio.PlayOneShot(ouch);
             }
         }
@@ -131,10 +131,10 @@ public class Health : MonoBehaviour
         if (otherThing.gameObject.tag == "Laser" && protection == false && heart > 0)
         {
             heart--;
-            protection = true;
             playeraudio.PlayOneShot(hit);
             if (heart > 0)
             {
+                protection = true;
                 playeraudio.PlayOneShot(ouch);
             }
         }
