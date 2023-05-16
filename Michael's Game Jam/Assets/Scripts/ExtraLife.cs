@@ -30,8 +30,11 @@ public class ExtraLife : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {      
-        countDown -= Time.deltaTime;
+    {
+        if (clock.levelCount >= 20)
+        {
+            countDown -= Time.deltaTime;
+        }
 
         zoneX = Random.Range(-8.5f, 8.5f);
         zoneZ = Random.Range(-8.5f, 8.5f);
@@ -54,55 +57,8 @@ public class ExtraLife : MonoBehaviour
             }
             //If the bulletIndex goes over the count of the bulletPool, then stay at 0.
 
-            if (clock.levelCount >= 0)
-            {
-                countDown = 60;
-
-                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
 
             if (clock.levelCount >= 20)
-            {
-                countDown = 55;
-
-                currentHeart.transform.position = new Vector3 (zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
-
-            if (clock.levelCount >= 40)
-            {
-                countDown = 50;
-
-                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
-
-            if (clock.levelCount >= 60)
-            {
-                countDown = 45;
-
-                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
-
-            if (clock.levelCount >= 80)
-            {
-                countDown = 40;
-
-                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
-
-            if (clock.levelCount >= 100)
-            {
-                countDown = 35;
-
-                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
-                //Have the bullet move forward based on the camera and the player's direction.
-            }
-
-            if (clock.levelCount >= 120)
             {
                 countDown = 30;
 
@@ -110,23 +66,39 @@ public class ExtraLife : MonoBehaviour
                 //Have the bullet move forward based on the camera and the player's direction.
             }
 
-            if (clock.levelCount >= 140)
+            if (clock.levelCount >= 40)
             {
-                countDown = 25;
+                countDown = 27;
 
                 currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
                 //Have the bullet move forward based on the camera and the player's direction.
             }
 
-            if (clock.levelCount >= 160)
+            if (clock.levelCount >= 60)
             {
-                countDown = 20;
+                countDown = 24;
 
                 currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
                 //Have the bullet move forward based on the camera and the player's direction.
             }
 
-            if (clock.levelCount >= 180)
+            if (clock.levelCount >= 80)
+            {
+                countDown = 21;
+
+                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
+                //Have the bullet move forward based on the camera and the player's direction.
+            }
+
+            if (clock.levelCount >= 100)
+            {
+                countDown = 18;
+
+                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
+                //Have the bullet move forward based on the camera and the player's direction.
+            }
+
+            if (clock.levelCount >= 120)
             {
                 countDown = 15;
 
@@ -134,9 +106,33 @@ public class ExtraLife : MonoBehaviour
                 //Have the bullet move forward based on the camera and the player's direction.
             }
 
+            if (clock.levelCount >= 140)
+            {
+                countDown = 12;
+
+                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
+                //Have the bullet move forward based on the camera and the player's direction.
+            }
+
+            if (clock.levelCount >= 160)
+            {
+                countDown = 9;
+
+                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
+                //Have the bullet move forward based on the camera and the player's direction.
+            }
+
+            if (clock.levelCount >= 180)
+            {
+                countDown = 6;
+
+                currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
+                //Have the bullet move forward based on the camera and the player's direction.
+            }
+
             if (clock.levelCount >= 200)
             {
-                countDown = 10;
+                countDown = 3;
 
                 currentHeart.transform.position = new Vector3(zoneX, 20, zoneZ);
                 //Have the bullet move forward based on the camera and the player's direction.
