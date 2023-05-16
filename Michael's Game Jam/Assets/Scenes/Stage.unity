@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: {fileID: 8380884919897970474, guid: 91bce292db26ebc43af3c884afd50ec7, type: 3}
   heartNum: 15
-  countDown: 10
+  countDown: 60
   zoneX: 0
   zoneZ: 0
   playeraudio: {fileID: 1608773372}
