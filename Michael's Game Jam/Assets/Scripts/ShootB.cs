@@ -21,6 +21,8 @@ public class ShootB : MonoBehaviour
     public float choiceA = 0;
     public float choiceB = 0;
 
+    public bool myTurn = false;
+
     DeltaTime clock;
 
     // Start is called before the first frame update
@@ -35,94 +37,97 @@ public class ShootB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countDown -= Time.deltaTime;
-        if (countDown < 0 && clock.levelCount > 80)
+        if (myTurn == true)
         {
-            GameObject currentBullet = bulletPool[bulletIndex];
-            //Use the GameObject currentBullet as the base for the bulletPool [and bulletIndex].
-
-            currentBullet.SetActive(true);
-            //Create a bullet based out of the amount of bulletPool.
-
-            bulletIndex++;
-            //Create a bulletIndex by 1.
-
-            if (bulletIndex >= bulletPool.Count)
+            countDown -= Time.deltaTime;
+            if (countDown < 0 && clock.levelCount >= 80)
             {
-                bulletIndex = 0;
+                GameObject currentBullet = bulletPool[bulletIndex];
+                //Use the GameObject currentBullet as the base for the bulletPool [and bulletIndex].
+
+                currentBullet.SetActive(true);
+                //Create a bullet based out of the amount of bulletPool.
+
+                bulletIndex++;
+                //Create a bulletIndex by 1.
+
+                if (bulletIndex >= bulletPool.Count)
+                {
+                    bulletIndex = 0;
+                }
+                //If the bulletIndex goes over the count of the bulletPool, then stay at 0.
+
+                if (clock.levelCount >= 80)
+                {
+                    countDown = 4;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.8f, 0, choiceB * 1.8f);
+                }
+
+                if (clock.levelCount > 100)
+                {
+                    countDown = 4;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2, 0, choiceB * 2);
+                }
+
+                if (clock.levelCount > 120)
+                {
+                    countDown = 3;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.2f, 0, choiceB * 2.2f);
+                }
+
+                if (clock.levelCount > 140)
+                {
+                    countDown = 3;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.4f, 0, choiceB * 2.4f);
+                }
+
+                if (clock.levelCount > 160)
+                {
+                    countDown = 3;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.6f, 0, choiceB * 2.6f);
+                }
+
+                if (clock.levelCount > 180)
+                {
+                    countDown = 2;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.8f, 0, choiceB * 2.8f);
+                }
+
+                if (clock.levelCount >= 200)
+                {
+                    countDown = 2;
+
+                    currentBullet.transform.position = transform.position;
+                    //Have the bullet move forward based on the camera and the player's direction.
+
+                    currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 3, 0, choiceB * 3);
+                }
             }
-            //If the bulletIndex goes over the count of the bulletPool, then stay at 0.
-
-            if (clock.levelCount > 80)
-            {
-                countDown = 4;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.8f, 0, choiceB * 1.8f);
-            }
-
-            if (clock.levelCount > 100)
-            {
-                countDown = 4;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2, 0, choiceB * 2);
-            }
-
-            if (clock.levelCount > 120)
-            {
-                countDown = 3;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.2f, 0, choiceB * 2.2f);
-            }
-
-            if (clock.levelCount > 140)
-            {
-                countDown = 3;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.4f, 0, choiceB * 2.4f);
-            }
-
-            if (clock.levelCount > 160)
-            {
-                countDown = 3;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.6f, 0, choiceB * 2.6f);
-            }
-
-            if (clock.levelCount > 180)
-            {
-                countDown = 2;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.8f, 0, choiceB * 2.8f);
-            }
-
-            if (clock.levelCount >= 200)
-            {
-                countDown = 2;
-
-                currentBullet.transform.position = transform.position;
-                //Have the bullet move forward based on the camera and the player's direction.
-
-                currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 3, 0, choiceB * 3);
-            }
-        }
+        }      
     }
 
     void CreateBulletPool()

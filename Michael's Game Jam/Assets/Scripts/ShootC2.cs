@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootC : MonoBehaviour
+public class ShootC2 : MonoBehaviour
 {
     public GameObject bulletPrefab;
     //Use the GameObject bullet, as a prefab and a weapon.
@@ -87,7 +87,7 @@ public class ShootC : MonoBehaviour
                     currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 3, 0, choiceB * 3);
                 }
             }
-        }       
+        }
     }
 
     void CreateBulletPool()

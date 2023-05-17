@@ -26,9 +26,12 @@ public class Player : MonoBehaviour
 
     public bool pause = false;
 
+    DeltaTime clock;
+
     // Start is called before the first frame update
     void Start()
     {
+        clock = GameObject.Find("Player").GetComponent<DeltaTime>();
         characterControl = GetComponent<CharacterController>();
         Time.timeScale = 1.0f;
         pauseText.SetActive(false);
@@ -47,12 +50,15 @@ public class Player : MonoBehaviour
         vel.x = Input.GetAxis("Horizontal") * speed;
         vel = transform.TransformDirection(vel);
 
-        if (Input.GetKey(KeyCode.Z) && cc.isGrounded)
+        if (clock.levelCount >= 50)
         {
-            velocity = Mathf.Sqrt(jumpHeight * -3f * (gravity * gravityScale));
-            // Jump !!
+            if (Input.GetKey(KeyCode.Z) && cc.isGrounded)
+            {
+                velocity = Mathf.Sqrt(jumpHeight * -3f * (gravity * gravityScale));
+                // Jump !!
 
-            playeraudio.PlayOneShot(jump);
+                playeraudio.PlayOneShot(jump);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && GetComponent<DeltaTime>().finished == false)

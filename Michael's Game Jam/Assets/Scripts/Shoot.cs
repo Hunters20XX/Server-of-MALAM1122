@@ -26,10 +26,11 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        clock = GameObject.Find("Player").GetComponent<DeltaTime>();
+            clock = GameObject.Find("Player").GetComponent<DeltaTime>();
 
-        CreateBulletPool();
-        //Made a void for CreateBulletPool().
+            CreateBulletPool();
+            //Made a void for CreateBulletPool().
+        
     }
 
     // Update is called once per frame
@@ -63,7 +64,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA, 0, choiceB);
             }
 
-            if (clock.levelCount > 20)
+            if (clock.levelCount >= 20)
             {
                 countDown = 5;
 
@@ -73,7 +74,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.2f, 0, choiceB * 1.2f);
             }
 
-            if (clock.levelCount > 40)
+            if (clock.levelCount >= 40)
             {
                 countDown = 5;
 
@@ -83,7 +84,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.4f, 0, choiceB * 1.4f);
             }
 
-            if (clock.levelCount > 60)
+            if (clock.levelCount >= 60)
             {
                 countDown = 4;
 
@@ -93,7 +94,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.6f, 0, choiceB * 1.6f);
             }
 
-            if (clock.levelCount > 80)
+            if (clock.levelCount >= 80)
             {
                 countDown = 4;
 
@@ -101,9 +102,12 @@ public class Shoot : MonoBehaviour
                 //Have the bullet move forward based on the camera and the player's direction.
 
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 1.8f, 0, choiceB * 1.8f);
+
+                GetComponent<ShootB>().myTurn = true;
+                GetComponent<ShootB2>().myTurn = true;
             }
 
-            if (clock.levelCount > 100)
+            if (clock.levelCount >= 100)
             {
                 countDown = 4;
 
@@ -113,7 +117,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2, 0, choiceB * 2);
             }
 
-            if (clock.levelCount > 120)
+            if (clock.levelCount >= 120)
             {
                 countDown = 3;
 
@@ -123,7 +127,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.2f, 0, choiceB * 2.2f);
             }
 
-            if (clock.levelCount > 140)
+            if (clock.levelCount >= 140)
             {
                 countDown = 3;
 
@@ -133,7 +137,7 @@ public class Shoot : MonoBehaviour
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.4f, 0, choiceB * 2.4f);
             }
 
-            if (clock.levelCount > 160)
+            if (clock.levelCount >= 160)
             {
                 countDown = 3;
 
@@ -141,9 +145,12 @@ public class Shoot : MonoBehaviour
                 //Have the bullet move forward based on the camera and the player's direction.
 
                 currentBullet.GetComponent<ConstantForce>().force = new Vector3(choiceA * 2.6f, 0, choiceB * 2.6f);
+
+                GetComponent<ShootC>().myTurn = true;
+                GetComponent<ShootC2>().myTurn = true;
             }
 
-            if (clock.levelCount > 180)
+            if (clock.levelCount >= 180)
             {
                 countDown = 2;
 
